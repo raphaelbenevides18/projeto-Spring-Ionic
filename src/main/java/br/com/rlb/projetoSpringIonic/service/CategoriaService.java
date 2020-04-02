@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.rlb.projetoSpringIonic.entity.Categoria;
 import br.com.rlb.projetoSpringIonic.repository.CategoriaRepository;
+import br.com.rlb.projetoSpringIonic.service.exception.ObjectNotFoundException;
 
 @Service
 public class CategoriaService {
@@ -16,7 +17,8 @@ public class CategoriaService {
 	
 	public Categoria findById(Integer id) {
 		Optional<Categoria> obj = dao.findById(id);
-		return obj.orElse(null);
-	}
+		return obj.orElseThrow(() -> new ObjectNotFoundException(
+		"Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
+		}
 
 }
