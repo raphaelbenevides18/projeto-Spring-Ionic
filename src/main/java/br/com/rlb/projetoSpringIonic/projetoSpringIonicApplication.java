@@ -8,7 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import br.com.rlb.projetoSpringIonic.entity.Categoria;
-import br.com.rlb.projetoSpringIonic.entity.Produto;
+
 import br.com.rlb.projetoSpringIonic.repository.CategoriaRepository;
 
 @SpringBootApplication
