@@ -3,10 +3,14 @@ package br.com.rlb.projetoSpringIonic.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Pedido implements Serializable{
@@ -16,21 +20,25 @@ public class Pedido implements Serializable{
 	private Integer id;
 	private Date dataPedido;
 	
+	@OneToOne(cascade=CascadeType.ALL, mappedBy="pedido")
 	private Pagamento pagamento;
 	
+	@ManyToOne
+	@JoinColumn(name="cliente_id")
 	private Cliente cliente;
 	
+	@ManyToOne
+	@JoinColumn(name="endereco_entrega_id")
 	private Endereco enderecoDeEntrega;
 	
 	public Pedido() {
 		
 	}
 
-	public Pedido(Integer id, Date dataPedido, Pagamento pagamento, Cliente cliente, Endereco enderecoDeEntrega) {
+	public Pedido(Integer id, Date dataPedido, Cliente cliente, Endereco enderecoDeEntrega) {
 		super();
 		this.id = id;
 		this.dataPedido = dataPedido;
-		this.pagamento = pagamento;
 		this.cliente = cliente;
 		this.enderecoDeEntrega = enderecoDeEntrega;
 	}

@@ -1,5 +1,8 @@
 package br.com.rlb.projetoSpringIonic.entity;
 
+import javax.persistence.Entity;
+
+@Entity
 public class PagamentoCartao extends Pagamento{
 
 	private static final long serialVersionUID = 1L;

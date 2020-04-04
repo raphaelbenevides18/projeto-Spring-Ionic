@@ -2,6 +2,9 @@ package br.com.rlb.projetoSpringIonic.entity;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+
+@Entity
 public class PagamentoBoleto extends Pagamento{
 	
 	private static final long serialVersionUID = 1L;
