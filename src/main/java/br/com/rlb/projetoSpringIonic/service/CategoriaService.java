@@ -25,5 +25,10 @@ public class CategoriaService {
 		obj.setId(null);
 		return dao.save(obj);
 	}
+	
+	public Categoria update(Categoria obj) {
+		findById(obj.getId());
+		return dao.save(obj);
+	}
 
 }
