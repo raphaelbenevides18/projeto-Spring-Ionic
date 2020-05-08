@@ -61,6 +61,12 @@ public class projetoSpringIonicApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		Categoria cat1 = new Categoria(null, "Informatica");
 		Categoria cat2 = new Categoria(null, "Escritorio");
+		Categoria cat3 = new Categoria(null, "Categoria 3");
+		Categoria cat4 = new Categoria(null, "Categoria 4");
+		Categoria cat5 = new Categoria(null, "Categoria 5");
+		Categoria cat6 = new Categoria(null, "Categoria 6");
+		Categoria cat7 = new Categoria(null, "Categoria 7");
+		Categoria cat8 = new Categoria(null, "Categoria 8");
 
 		Produto p1 = new Produto(null, "computador", 2000.);
 		Produto p2 = new Produto(null, "imoressora", 800.);
@@ -73,7 +79,7 @@ public class projetoSpringIonicApplication implements CommandLineRunner {
 		p2.getCategorias().addAll(Arrays.asList(cat1, cat2));
 		p3.getCategorias().addAll(Arrays.asList(cat1));
 
-		categoriaRepository.saveAll(Arrays.asList(cat1, cat2));
+		categoriaRepository.saveAll(Arrays.asList(cat1, cat2, cat3, cat4 , cat5, cat6, cat7, cat8));
 		produtoRepository.saveAll(Arrays.asList(p1, p2, p3));
 
 		Estado est1 = new Estado(null, "Minas Gerais");
