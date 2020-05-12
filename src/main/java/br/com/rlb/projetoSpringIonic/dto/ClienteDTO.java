@@ -8,7 +8,9 @@ import javax.validation.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Length;
 
 import br.com.rlb.projetoSpringIonic.entity.Cliente;
+import br.com.rlb.projetoSpringIonic.service.validation.ClienteUpdate;
 
+@ClienteUpdate
 public class ClienteDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
