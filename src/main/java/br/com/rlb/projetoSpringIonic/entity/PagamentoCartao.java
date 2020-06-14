@@ -2,7 +2,10 @@ package br.com.rlb.projetoSpringIonic.entity;
 
 import javax.persistence.Entity;
 
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
 @Entity
+@JsonTypeName("pagamentoCartao")
 public class PagamentoCartao extends Pagamento{
 
 	private static final long serialVersionUID = 1L;
